@@ -1,4 +1,5 @@
 import type { MetaArgs } from 'react-router';
+import About from '~/components/About';
 import HeroSection from '~/components/HeroSection';
 import Navbar from '~/components/Navbar';
 
@@ -14,7 +15,7 @@ export default function Home() {
     <div>
       <Navbar />
       <HeroSection />
-      <h1>Index</h1>
+      <About />
     </div>
   );
 }

@@ -18,7 +18,7 @@ const HeroSection = () => {
             data-aos-delay="200"
             src="/hero.jpg"
             alt="Website Mockup"
-            className="w-full h-full rounded-2xl shadow-2xl ring-1 ring-white/10"
+            className="w-full h-full rounded-[1rem] shadow-2xl ring-1 ring-white/10"
           />
 
           {/* Floating Icon */}
