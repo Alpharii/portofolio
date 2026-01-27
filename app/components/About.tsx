@@ -1,14 +1,14 @@
-import { Badge } from "../components/ui/badge";
-import { Button } from "../components/ui/button";
-import { ArrowRight, Users, Star, Award } from "lucide-react";
+import { Badge } from '../components/ui/badge';
+import { Button } from '../components/ui/button';
+import { ArrowRight, Users, Star, Award } from 'lucide-react';
 
 export const meta = () => {
   return [
-    { title: "About Me" },
+    { title: 'About Me' },
     {
-      name: "description",
+      name: 'description',
       content:
-        "About me section – Fullstack Web Developer specializing in TypeScript, Golang, NestJS, NextJS, and RemixJS.",
+        'About me section – Fullstack Web Developer specializing in TypeScript, Golang, NestJS, NextJS, and RemixJS.',
     },
   ];
 };
@@ -61,13 +61,13 @@ const About = () => {
           data-aos="fade-up"
           data-aos-delay="300"
         >
-          Fullstack Web Developer with experience building and deploying scalable
-          applications using{" "}
+          Fullstack Web Developer with experience building and deploying
+          scalable applications using{' '}
           <span className="text-white font-medium">
             TypeScript, Golang, NestJS, NextJS, and RemixJS
           </span>
-          . Proven in improving API performance up to 50% and supporting
-          1,000+ active users across Web, SaaS, and Web3 platforms.
+          . Proven in improving API performance up to 50% and supporting 1,000+
+          active users across Web, SaaS, and Web3 platforms.
         </p>
       </div>
 
@@ -90,15 +90,27 @@ const About = () => {
           </p>
 
           <ul className="space-y-4 text-zinc-300">
-            <li data-aos="fade-up" data-aos-delay="100" className="flex items-center gap-3">
+            <li
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="flex items-center gap-3"
+            >
               <Award className="h-5 w-5 text-blue-500" />
               Improved API response times by up to 30%.
             </li>
-            <li data-aos="fade-up" data-aos-delay="200" className="flex items-center gap-3">
+            <li
+              data-aos="fade-up"
+              data-aos-delay="200"
+              className="flex items-center gap-3"
+            >
               <Users className="h-5 w-5 text-blue-500" />
               Built systems used by 1,000+ enterprise employees.
             </li>
-            <li data-aos="fade-up" data-aos-delay="300" className="flex items-center gap-3">
+            <li
+              data-aos="fade-up"
+              data-aos-delay="300"
+              className="flex items-center gap-3"
+            >
               <Star className="h-5 w-5 text-blue-500" />
               Experience in Web, SaaS, Management System platforms.
             </li>

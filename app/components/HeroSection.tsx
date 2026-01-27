@@ -57,7 +57,8 @@ const HeroSection = () => {
             data-aos-delay="400"
             className="text-lg text-zinc-400 max-w-xl"
           >
-            Full-Stack Web Developer experienced in building scalable web applications using TypeScript, Golang, NestJS, and Remix.
+            Full-Stack Web Developer experienced in building scalable web
+            applications using TypeScript, Golang, NestJS, and Remix.
           </p>
 
           <div

@@ -1,43 +1,48 @@
-import { Badge } from "../components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
-import { Briefcase, MapPin, CheckCircle, Code } from "lucide-react";
-import type { JSX } from "react";
-import { FaNodeJs, FaReact } from "react-icons/fa";
-import { FaGolang } from "react-icons/fa6";
-import { RiRemixRunFill } from "react-icons/ri";
-import { SiNestjs, SiPostgresql, SiNextdotjs, SiStrapi } from "react-icons/si";
+import { Badge } from '../components/ui/badge';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '../components/ui/card';
+import { Briefcase, MapPin, CheckCircle, Code } from 'lucide-react';
+import type { JSX } from 'react';
+import { FaNodeJs, FaReact } from 'react-icons/fa';
+import { FaGolang } from 'react-icons/fa6';
+import { RiRemixRunFill } from 'react-icons/ri';
+import { SiNestjs, SiPostgresql, SiNextdotjs, SiStrapi } from 'react-icons/si';
 
 const experiences = [
   {
     id: 1,
-    company: "PT Elnusa Petrofin Tbk",
-    role: "Fullstack Web Developer",
-    location: "Jakarta Selatan (Remote)",
-    period: "Feb 2025 – Present",
-    image: "/elnusa.jpg",
-    stack: ["NestJS", "PostgreSQL", "Remix", "NextJS", "NodeJS", "React"],
+    company: 'PT Elnusa Petrofin Tbk',
+    role: 'Fullstack Web Developer',
+    location: 'Jakarta Selatan (Remote)',
+    period: 'Feb 2025 – Present',
+    image: '/elnusa.jpg',
+    stack: ['NestJS', 'PostgreSQL', 'Remix', 'NextJS', 'NodeJS', 'React'],
     bullets: [
-      "Internal enterprise apps used by 10,000+ employees.",
-      "NestJS & PostgreSQL backend with clean architecture.",
-      "Auth, RBAC, file uploads, reporting modules.",
-      "Agile Scrum environment.",
+      'Internal enterprise apps used by 10,000+ employees.',
+      'NestJS & PostgreSQL backend with clean architecture.',
+      'Auth, RBAC, file uploads, reporting modules.',
+      'Agile Scrum environment.',
     ],
-    accent: "blue",
+    accent: 'blue',
   },
   {
     id: 2,
-    company: "Freelance (Self-Employed)",
-    role: "Freelance Fullstack Web Developer",
-    location: "Remote",
-    period: "Jan 2025 – Apr 2025",
-    image: "/freelance.jpg",
-    stack: ["NextJS", "Remix", "NestJS", "Golang", "Strapi"],
+    company: 'Freelance (Self-Employed)',
+    role: 'Freelance Fullstack Web Developer',
+    location: 'Remote',
+    period: 'Jan 2025 – Apr 2025',
+    image: '/freelance.jpg',
+    stack: ['NextJS', 'Remix', 'NestJS', 'Golang', 'Strapi'],
     bullets: [
-      "Production-ready landing pages with shadcn/ui.",
-      "Backend using NestJS, Strapi CMS & Golang.",
-      "Integrated Mollie payment gateway for SaaS.",
+      'Production-ready landing pages with shadcn/ui.',
+      'Backend using NestJS, Strapi CMS & Golang.',
+      'Integrated Mollie payment gateway for SaaS.',
     ],
-    accent: "green",
+    accent: 'green',
   },
 ];
 
@@ -86,18 +91,18 @@ const Experiences = () => {
       {/* Cards */}
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {experiences.map((exp) => (
+          {experiences.map(exp => (
             <Card
               key={exp.id}
               className="
                 p-0 bg-zinc-900/70 border border-zinc-800 overflow-hidden
                 backdrop-blur-sm hover:shadow-xl hover:-translate-y-1
-                transition-all duration-200
+                transition-all duration-200 rounded-[10px]
               "
               data-aos="fade-up"
             >
               {/* Image TOP */}
-              <div className="relative h-52 w-full bg-amber-200">
+              <div className="relative h-48 w-full bg-amber-200">
                 <img
                   src={exp.image}
                   alt={exp.company}
@@ -107,30 +112,27 @@ const Experiences = () => {
               </div>
 
               {/* Content */}
-              <div className="p-5">
+              <div className="px-5 pb-5">
                 <CardHeader className="p-0 mb-3">
                   <div className="flex items-start justify-between gap-3">
                     <div>
                       <CardTitle className="text-lg md:text-xl">
                         {exp.role}
                       </CardTitle>
-                      <div className="text-sm text-zinc-300 mt-1">
-                        {exp.company}
-                      </div>
                     </div>
 
                     <Badge
                       className={`shrink-0 ${
-                        exp.accent === "blue"
-                          ? "bg-blue-600/10 text-blue-300"
-                          : "bg-green-600/10 text-green-300"
+                        exp.accent === 'blue'
+                          ? 'bg-blue-600/10 text-blue-300'
+                          : 'bg-green-600/10 text-green-300'
                       }`}
                     >
                       {exp.period}
                     </Badge>
                   </div>
 
-                  <div className="flex flex-wrap gap-4 text-xs text-zinc-400 mt-3">
+                  <div className="flex flex-wrap gap-4 text-xs text-zinc-400 mt-1">
                     <span className="flex items-center gap-2">
                       <Briefcase className="h-4 w-4" />
                       {exp.company}
@@ -148,9 +150,9 @@ const Experiences = () => {
                       <li key={i} className="flex gap-2 text-sm">
                         <CheckCircle
                           className={`h-4 w-4 mt-0.5 ${
-                            exp.accent === "blue"
-                              ? "text-blue-400"
-                              : "text-green-400"
+                            exp.accent === 'blue'
+                              ? 'text-blue-400'
+                              : 'text-green-400'
                           }`}
                         />
                         {b}
@@ -160,7 +162,7 @@ const Experiences = () => {
 
                   {/* Skills */}
                   <div className="flex flex-wrap gap-2">
-                    {exp.stack.map((tech) => (
+                    {exp.stack.map(tech => (
                       <div
                         key={tech}
                         className="
