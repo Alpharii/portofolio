@@ -8,8 +8,8 @@ import Projects from '~/components/Projects';
 
 export function meta({}: MetaArgs) {
   return [
-    { title: 'Test' },
-    { name: 'description', content: 'Welcome to React Router!' },
+    { title: 'Bintang Alphari' },
+    { name: 'Muhammad Bintang Alphari', content: 'Portofolio Muhammad Bintang Alphari' },
   ];
 }
 

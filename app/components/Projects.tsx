@@ -1,5 +1,7 @@
-import { FaReact, FaNodeJs } from 'react-icons/fa';
-import { SiNestjs, SiRemix, SiPostgresql, SiPrisma } from 'react-icons/si';
+import { FaReact, FaCode } from 'react-icons/fa';
+import { SiNestjs, SiPostgresql, SiPrisma, SiReactrouter, SiGooglegemini, SiTailwindcss, SiMui, SiTypescript, SiShadcnui, SiVitest } from 'react-icons/si';
+import { RiJavascriptLine, RiNextjsFill, RiQuillPenAiFill, RiRemixRunFill, RiSecurePaymentFill } from 'react-icons/ri';
+import { FaGolang } from 'react-icons/fa6';
 
 import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
@@ -13,75 +15,169 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './styles/projects-swiper.css';
 
-
 const projects = [
   {
-    title: 'RBAC News Backend',
+    title: 'AI Chatbot',
     description:
-      'Role-based access control backend system with authentication, permission handling, and scalable architecture.',
+      'AI-powered chatbot with natural language processing and context-aware responses.',
     images: [
-      '/projects/rbac/1.png',
-      '/projects/rbac/2.png',
-      '/projects/rbac/3.png',
-      '/projects/rbac/4.png',
-      '/projects/rbac/5.png',
+      '/projects/ai-chatbot/1.png',
+      '/projects/ai-chatbot/2.png',
+      '/projects/ai-chatbot/3.png',
+      '/projects/ai-chatbot/4.png',
+      '/projects/ai-chatbot/5.png',
     ],
     stack: [
-      { icon: SiNestjs, label: 'NestJS' },
+      { icon: FaGolang, label: 'Golang' },
       { icon: SiPostgresql, label: 'PostgreSQL' },
-      { icon: SiPrisma, label: 'Prisma' },
+      { icon: SiGooglegemini, label: 'Gemini API' },
+      { icon: SiTypescript, label: 'TypeScript' },
+      { icon: SiReactrouter, label: 'React Router' },
+      { icon: SiMui, label: 'Material UI' },
+      { icon: SiTailwindcss, label: 'Tailwind CSS' },
     ],
-    highlight: 'Backend',
-  },
-    {
-    title: 'RBAC News Backend',
-    description:
-      'Role-based access control backend system with authentication, permission handling, and scalable architecture.',
-    images: [
-      '/projects/rbac/1.png',
-      '/projects/rbac/2.png',
-      '/projects/rbac/3.png',
-      '/projects/rbac/4.png',
-      '/projects/rbac/5.png',
-    ],
-    stack: [
-      { icon: SiNestjs, label: 'NestJS' },
-      { icon: SiPostgresql, label: 'PostgreSQL' },
-      { icon: SiPrisma, label: 'Prisma' },
-    ],
-    highlight: 'Backend',
-  },
-    {
-    title: 'RBAC News Backend',
-    description:
-      'Role-based access control backend system with authentication, permission handling, and scalable architecture.',
-    images: [
-      '/projects/rbac/1.png',
-      '/projects/rbac/2.png',
-      '/projects/rbac/3.png',
-      '/projects/rbac/4.png',
-      '/projects/rbac/5.png',
-    ],
-    stack: [
-      { icon: SiNestjs, label: 'NestJS' },
-      { icon: SiPostgresql, label: 'PostgreSQL' },
-      { icon: SiPrisma, label: 'Prisma' },
-    ],
-    highlight: 'Backend',
+    highlight: 'Fullstack',
   },
   {
-    title: 'Account Management System',
+    title: 'Buana CMS',
     description:
-      'Fullstack web app for managing users, hobbies, and favorite characters with SSR and authentication.',
+      'Web application designed to help sales teams efficiently manage customers, orders, and sales activities.',
     images: [
-      '/projects/account/1.png',
-      '/projects/account/2.png',
-      '/projects/account/3.png',
+      '/projects/buana/1.png',
+      '/projects/buana/2.png',
+      '/projects/buana/3.png',
+      '/projects/buana/4.png',
+      '/projects/buana/5.png',
     ],
     stack: [
-      { icon: SiRemix, label: 'Remix' },
+      { icon: FaGolang, label: 'Golang' },
+      { icon: SiPostgresql, label: 'PostgreSQL' },
+      { icon: SiTypescript, label: 'TypeScript' },
+      { icon: RiRemixRunFill, label: 'Remix' },
+      { icon: FaReact, label: 'React Hook Form' },
+      { icon: SiShadcnui, label: 'Shadcn UI' },
+      { icon: SiTailwindcss, label: 'Tailwind CSS' },
+    ],
+    highlight: 'Fullstack',
+  },
+  {
+    title: 'Remix Boilerplate',
+    description:
+      'A starter kit using Remix with HTTP-only cookie authentication (preauth/postauth), flat routes, and Axios as the HTTP client.',
+    images: [
+      '/projects/remix-boilerplate/1.png',
+      '/projects/remix-boilerplate/2.png',
+      '/projects/remix-boilerplate/3.png',
+      '/projects/remix-boilerplate/4.png',
+      '/projects/remix-boilerplate/5.png',
+    ],
+    stack: [
+      { icon: RiRemixRunFill, label: 'Remix' },
+      { icon: SiTypescript, label: 'TypeScript' },
+      { icon: FaReact, label: 'React Hook Form' },
+      { icon: SiVitest, label: 'Vite' },
+      { icon: SiTailwindcss, label: 'Tailwind CSS' },
+    ],
+    highlight: 'Frontend',
+  },
+  {
+    title: 'Sticky Memo',
+    description:
+      'Contributed to an open-source sticky note web application built with React and Material UI.',
+    images: [
+      '/projects/sticky-memo/1.png',
+      '/projects/sticky-memo/2.png',
+      '/projects/sticky-memo/3.png',
+    ],
+    stack: [
       { icon: FaReact, label: 'React' },
-      { icon: FaNodeJs, label: 'Node.js' },
+      { icon: RiJavascriptLine, label: 'Javascript' },
+      { icon: SiMui, label: 'Material UI' },
+      { icon: SiVitest, label: 'Vite' },
+      { icon: SiTailwindcss, label: 'Tailwind CSS' },
+
+    ],
+    highlight: 'Open Source Contribution',
+  },
+    {
+    title: 'EYP Summer Training Camp Website',
+    description:
+      'Contributed to an open-source website for the EYP Summer Training Camp.',
+    images: [
+      '/projects/eyp-summer-camp/1.png',
+      '/projects/eyp-summer-camp/2.png',
+      '/projects/eyp-summer-camp/3.png',
+    ],
+    stack: [
+      { icon: RiNextjsFill, label: 'Next.js' },
+      { icon: FaReact, label: 'React' },
+      { icon: SiTypescript, label: 'Typescript' },
+      { icon: SiVitest, label: 'Vite' },
+      { icon: SiTailwindcss, label: 'Tailwind CSS' },
+
+    ],
+    highlight: 'Open Source Contribution',
+  },
+  {
+    title: 'ClickCode.id',
+    description:
+      'Developed a landing page for ClickCode.id, a digital agency focusing on website development services.',
+    images: [
+      '/projects/clickcode/1.png',
+      '/projects/clickcode/2.png',
+      '/projects/clickcode/3.png',
+    ],
+    stack: [
+      { icon: RiRemixRunFill, label: 'Remix' },
+      { icon: SiTypescript, label: 'TypeScript' },
+      { icon: SiShadcnui, label: 'Shadcn UI' },
+      { icon: SiVitest, label: 'Vite' },
+      { icon: SiTailwindcss, label: 'Tailwind CSS' },
+
+    ],
+    highlight: 'Frontend',
+  },
+  {
+    title: 'GadgetSpot E-Commerce',
+    description:
+      'Developed a scalable e-commerce platform with payment integration with team of 4.',
+    images: [
+      '/projects/gadgetspot/1.png',
+      '/projects/gadgetspot/2.png',
+      '/projects/gadgetspot/3.png',
+    ],
+    stack: [
+      { icon: SiNestjs, label: 'NestJs' },
+      { icon: SiPostgresql, label: 'PostgreSQL' },
+      { icon: SiPrisma, label: 'Prisma' },
+      { icon: RiRemixRunFill, label: 'Remix' },
+      { icon: SiTypescript, label: 'TypeScript' },
+      { icon: FaCode, label: 'Zustand' },
+      { icon: RiSecurePaymentFill, label: 'Midtrans' },
+      { icon: SiTailwindcss, label: 'Tailwind CSS' },
+
+    ],
+    highlight: 'Fullstack',
+  },
+  {
+    title: 'My Blog App',
+    description:
+      'Developed a social-blogging platform that combines blog content with social interactions.',
+    images: [
+      '/projects/my-blog-app/1.png',
+      '/projects/my-blog-app/2.png',
+      '/projects/my-blog-app/3.png',
+    ],
+    stack: [
+      { icon: SiNestjs, label: 'NestJs' },
+      { icon: SiPostgresql, label: 'PostgreSQL' },
+      { icon: SiPrisma, label: 'Prisma' },
+      { icon: RiRemixRunFill, label: 'Remix' },
+      { icon: SiTypescript, label: 'TypeScript' },
+      { icon: FaCode, label: 'Zustand' },
+      { icon: RiQuillPenAiFill, label: 'React Quil' },
+      { icon: SiTailwindcss, label: 'Tailwind CSS' },
+
     ],
     highlight: 'Fullstack',
   },
@@ -91,6 +187,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
+      data-aos="fade-up"
       className="
         relative overflow-hidden py-20
         bg-gradient-to-br from-slate-950 via-slate-900 to-black
@@ -102,7 +199,11 @@ const Projects = () => {
       <div className="absolute -bottom-32 left-0 w-[420px] h-[420px] bg-blue-600/10 blur-3xl rounded-full" />
 
       {/* Header */}
-      <div className="container mx-auto max-w-4xl px-4 mb-16 text-center relative z-10">
+      <div
+        data-aos="zoom-in"
+        data-aos-delay="100"
+        className="container mx-auto max-w-4xl px-4 mb-16 text-center relative z-10"
+      >
         <Badge className="bg-zinc-800 text-zinc-200 inline-flex items-center gap-2">
           <FolderOpen className="w-4 h-4" />
           Projects
@@ -118,7 +219,11 @@ const Projects = () => {
       </div>
 
       {/* CARD SWIPER */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="200"
+        className="relative z-10 max-w-7xl mx-auto px-6"
+      >
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
           spaceBetween={28}
@@ -138,10 +243,7 @@ const Projects = () => {
           "
         >
           {projects.map((project, i) => (
-            <SwiperSlide
-              key={i}
-              className="!w-[340px] md:!w-[520px]"
-            >
+            <SwiperSlide key={i} className="!w-[340px] md:!w-[520px]">
               <div
                 className="
                   h-full rounded-2xl border border-zinc-800
@@ -180,9 +282,7 @@ const Projects = () => {
                       {project.highlight}
                     </div>
 
-                    <h3 className="text-xl font-bold">
-                      {project.title}
-                    </h3>
+                    <h3 className="text-xl font-bold">{project.title}</h3>
 
                     <p className="text-sm text-zinc-400 leading-relaxed">
                       {project.description}
@@ -225,10 +325,8 @@ const Projects = () => {
           ))}
         </Swiper>
       </div>
-
     </section>
   );
 };
-
 
 export default Projects;

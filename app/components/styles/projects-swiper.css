@@ -1,7 +1,9 @@
 .projects-swiper .swiper-button-next,
 .projects-swiper .swiper-button-prev {
   color: #60a5fa;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   animation: pulseArrow 2s infinite;
 }
 
@@ -12,7 +14,13 @@
 }
 
 @keyframes pulseArrow {
-  0% { opacity: 0.6; }
-  50% { opacity: 1; }
-  100% { opacity: 0.6; }
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
 }

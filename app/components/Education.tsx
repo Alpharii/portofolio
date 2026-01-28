@@ -1,10 +1,5 @@
 import { Badge } from '../components/ui/badge';
-import {
-  GraduationCap,
-  Calendar,
-  Sparkles,
-  CheckCircle2,
-} from 'lucide-react';
+import { GraduationCap, Calendar, Sparkles, CheckCircle2 } from 'lucide-react';
 
 const education = [
   {
@@ -73,8 +68,7 @@ const Education = () => {
 
         <div className="space-y-14">
           {education.map((edu, i) => {
-            const accent =
-              edu.color === 'blue' ? 'blue' : 'green';
+            const accent = edu.color === 'blue' ? 'blue' : 'green';
 
             return (
               <div
@@ -141,9 +135,7 @@ const Education = () => {
                           <CheckCircle2
                             className={`mt-0.5 h-4 w-4 shrink-0 text-${accent}-400`}
                           />
-                          <span className="text-zinc-300">
-                            {h}
-                          </span>
+                          <span className="text-zinc-300">{h}</span>
                         </li>
                       ))}
                     </ul>
