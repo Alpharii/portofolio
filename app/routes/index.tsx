@@ -1,5 +1,6 @@
 import type { MetaArgs } from 'react-router';
 import About from '~/components/About';
+import { Contact } from '~/components/Contact';
 import Education from '~/components/Education';
 import Experiences from '~/components/Experiences';
 import HeroSection from '~/components/HeroSection';
@@ -10,13 +11,16 @@ import { Skills } from '~/components/Skills';
 export function meta({}: MetaArgs) {
   return [
     { title: 'Bintang Alphari' },
-    { name: 'Muhammad Bintang Alphari', content: 'Portofolio Muhammad Bintang Alphari' },
+    {
+      name: 'Muhammad Bintang Alphari',
+      content: 'Portofolio Muhammad Bintang Alphari',
+    },
   ];
 }
 
 export default function Home() {
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <Navbar />
       <HeroSection />
       <About />
@@ -24,6 +28,7 @@ export default function Home() {
       <Education />
       <Projects />
       <Skills />
+      <Contact />
     </div>
   );
 }

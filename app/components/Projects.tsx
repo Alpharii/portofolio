@@ -1,6 +1,23 @@
 import { FaReact, FaCode } from 'react-icons/fa';
-import { SiNestjs, SiPostgresql, SiPrisma, SiReactrouter, SiGooglegemini, SiTailwindcss, SiMui, SiTypescript, SiShadcnui, SiVitest } from 'react-icons/si';
-import { RiJavascriptLine, RiNextjsFill, RiQuillPenAiFill, RiRemixRunFill, RiSecurePaymentFill } from 'react-icons/ri';
+import {
+  SiNestjs,
+  SiPostgresql,
+  SiPrisma,
+  SiReactrouter,
+  SiGooglegemini,
+  SiTailwindcss,
+  SiMui,
+  SiTypescript,
+  SiShadcnui,
+  SiVitest,
+} from 'react-icons/si';
+import {
+  RiJavascriptLine,
+  RiNextjsFill,
+  RiQuillPenAiFill,
+  RiRemixRunFill,
+  RiSecurePaymentFill,
+} from 'react-icons/ri';
 import { FaGolang } from 'react-icons/fa6';
 
 import { Badge } from '../components/ui/badge';
@@ -95,11 +112,10 @@ const projects = [
       { icon: SiMui, label: 'Material UI' },
       { icon: SiVitest, label: 'Vite' },
       { icon: SiTailwindcss, label: 'Tailwind CSS' },
-
     ],
     highlight: 'Open Source Contribution',
   },
-    {
+  {
     title: 'EYP Summer Training Camp Website',
     description:
       'Contributed to an open-source website for the EYP Summer Training Camp.',
@@ -114,7 +130,6 @@ const projects = [
       { icon: SiTypescript, label: 'Typescript' },
       { icon: SiVitest, label: 'Vite' },
       { icon: SiTailwindcss, label: 'Tailwind CSS' },
-
     ],
     highlight: 'Open Source Contribution',
   },
@@ -133,7 +148,6 @@ const projects = [
       { icon: SiShadcnui, label: 'Shadcn UI' },
       { icon: SiVitest, label: 'Vite' },
       { icon: SiTailwindcss, label: 'Tailwind CSS' },
-
     ],
     highlight: 'Frontend',
   },
@@ -155,7 +169,6 @@ const projects = [
       { icon: FaCode, label: 'Zustand' },
       { icon: RiSecurePaymentFill, label: 'Midtrans' },
       { icon: SiTailwindcss, label: 'Tailwind CSS' },
-
     ],
     highlight: 'Fullstack',
   },
@@ -177,7 +190,6 @@ const projects = [
       { icon: FaCode, label: 'Zustand' },
       { icon: RiQuillPenAiFill, label: 'React Quil' },
       { icon: SiTailwindcss, label: 'Tailwind CSS' },
-
     ],
     highlight: 'Fullstack',
   },
@@ -225,42 +237,45 @@ const Projects = () => {
         className="relative z-10 max-w-7xl mx-auto px-6"
       >
         <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
-          spaceBetween={28}
-          slidesPerView="auto"
-          grabCursor
-          centeredSlides={false}
-          autoplay={{
-            delay: 4500,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          navigation
+          spaceBetween={20} // Adjusted space for mobile
+          slidesPerView={1}
           pagination={{ clickable: true }}
-          className="
-            !pb-12
-            projects-swiper
-          "
+          navigation={true}
+          autoplay={{ delay: 5000 }}
+          breakpoints={{
+            640: { slidesPerView: 1, spaceBetween: 20 }, // Mobile layout
+            768: { slidesPerView: 2, spaceBetween: 30 }, // Tablet layout
+            1024: { slidesPerView: 3, spaceBetween: 30 }, // Desktop layout
+          }}
+          modules={[Pagination, Navigation, Autoplay]}
+          className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" // Added responsive padding
+          loop
         >
           {projects.map((project, i) => (
             <SwiperSlide key={i} className="!w-[340px] md:!w-[520px]">
               <div
                 className="
-                  h-full rounded-2xl border border-zinc-800
+                  h-[80vh] sm:h-full rounded-2xl border border-zinc-800
                   bg-zinc-900/60 p-5
                   backdrop-blur-sm transition
                   hover:border-zinc-700
                   hover:scale-[1.01]
-                  flex flex-col
+                  flex flex-col 
                 "
               >
                 {/* IMAGE SWIPER */}
                 <div className="relative mb-5 rounded-xl overflow-hidden border border-zinc-800">
                   <Swiper
-                    modules={[Pagination]}
+                    modules={[Pagination, Autoplay]}
                     pagination={{ clickable: true }}
                     nested
+                    loop
                     className="h-56"
+                    autoplay={{
+                      delay: 2000,
+                      disableOnInteraction: false,
+                      pauseOnMouseEnter: true,
+                    }}
                   >
                     {project.images.map((img, idx) => (
                       <SwiperSlide key={idx}>
