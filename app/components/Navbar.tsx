@@ -6,12 +6,12 @@ import { NavLink } from 'react-router';
 import { FaUser } from 'react-icons/fa';
 
 const navItems = [
-  { name: 'Home', href: '/' },
+  { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
-  { name: 'Services', href: '/services' },
-  { name: 'Portfolio', href: '/portfolio' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Experiences', href: '#experiences' },
+  { name: 'Portfolio', href: '#portfolio' },
+  { name: 'Techstack', href: '#techstack' },
+  { name: 'Contact', href: '#contact' },
 ];
 
 const Navbar = () => {
@@ -48,11 +48,7 @@ const Navbar = () => {
             <NavLink
               key={index}
               to={item.href}
-              className={({ isActive }) =>
-                `text-gray-100 hover:text-primary transition-colors ${
-                  isActive ? 'text-primary font-bold' : ''
-                }`
-              }
+              className={"text-gray-100 hover:text-primary transition-colors"}
             >
               {item.name}
             </NavLink>

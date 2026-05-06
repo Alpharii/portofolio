@@ -80,10 +80,7 @@ export const Skills = () => {
           Skills
         </Badge>
 
-        <h2 className="mt-4 text-3xl md:text-4xl font-extrabold">
-          Tech Stack
-        </h2>
-
+        <h2 className="mt-4 text-3xl md:text-4xl font-extrabold">Tech Stack</h2>
 
         <p className="mt-3 text-zinc-400 max-w-xl mx-auto">
           Technologies I actively use in real-world projects.

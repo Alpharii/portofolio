@@ -136,7 +136,7 @@ const About = () => {
           data-aos-delay="200"
         >
           <img
-            src="/profile.jpg"
+            src="/coding.jpg"
             alt="Profile"
             className="w-full h-full object-cover rounded-[1rem] shadow-2xl ring-1 ring-white/10"
           />

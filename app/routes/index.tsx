@@ -20,7 +20,7 @@ export function meta({}: MetaArgs) {
 
 export default function Home() {
   return (
-    <div className='overflow-x-hidden'>
+    <div className="overflow-x-hidden">
       <Navbar />
       <HeroSection />
       <About />
