@@ -2,12 +2,22 @@ import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Code, ArrowRight, Sparkles, Code2 } from 'lucide-react';
 
+import CVFile from "../../public/cv Muhammad Bintang Alphari.pdf";
+import { handleSmoothScroll } from '~/lib/handleSmoothScroll';
+
 const HeroSection = () => {
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = CVFile; 
+    link.download = "MuhammadBintangAlphari_CV.pdf";
+    link.click();
+  };
+
   return (
-    <section className="relative min-h-[calc(100vh-80px)] pt-24 flex items-center bg-black px-4 overflow-hidden pb-10">
+    <section id="home" className="relative min-h-[calc(100vh-80px)] pt-24 flex items-center bg-black px-4 overflow-hidden pb-10">
       {/* Background Glow */}
-      <div className="absolute w-[500px] h-[500px] bg-purple-500/20 rounded-full blur-3xl -top-32 -left-32" />
-      <div className="absolute w-[300px] h-[300px] bg-pink-500/20 rounded-full blur-2xl -bottom-32 -right-32" />
+      <div className="absolute w-150 h-150 bg-purple-500/20 rounded-full blur-3xl -top-32 -left-32" />
+      <div className="absolute w-75 h-75 bg-pink-500/20 rounded-full blur-2xl -bottom-32 -right-32" />
 
       {/* Wrapper */}
       <div className="container relative z-10 mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -66,7 +76,7 @@ const HeroSection = () => {
             data-aos-delay="500"
             className="flex flex-wrap gap-4"
           >
-            <Button size="lg" className="gap-2">
+            <Button onClick={() => handleSmoothScroll("portfolio")} size="lg" className="gap-2">
               View Projects <ArrowRight className="h-4 w-4" />
             </Button>
 
@@ -74,6 +84,7 @@ const HeroSection = () => {
               variant="outline"
               size="lg"
               className="border-white/20 text-white hover:bg-white/10"
+              onClick={handleDownloadCV}
             >
               Download CV
             </Button>

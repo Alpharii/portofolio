@@ -1,17 +1,26 @@
-import { useState } from 'react';
-import { Button } from './ui/button';
-import { Dialog, DialogContent, DialogTrigger } from './ui/dialog';
-import { Menu } from 'lucide-react';
-import { NavLink } from 'react-router';
-import { FaUser } from 'react-icons/fa';
+import { useState } from "react";
+import { Button } from "./ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "./ui/dialog";
+
+import {
+  Menu,
+  ArrowUpRight,
+} from "lucide-react";
+
+import { FaUser } from "react-icons/fa";
+import { handleSmoothScroll } from "~/lib/handleSmoothScroll";
 
 const navItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Experiences', href: '#experiences' },
-  { name: 'Portfolio', href: '#portfolio' },
-  { name: 'Techstack', href: '#techstack' },
-  { name: 'Contact', href: '#contact' },
+  { name: "Home", href: "home" },
+  { name: "About", href: "about" },
+  { name: "Experiences", href: "experiences" },
+  { name: "Portfolio", href: "portfolio" },
+  { name: "Techstack", href: "skills" },
+  { name: "Contact", href: "contact" },
 ];
 
 const Navbar = () => {
@@ -19,83 +28,136 @@ const Navbar = () => {
 
   return (
     <nav
-      className="w-full bg-black shadow-sm fixed top-0 z-50"
+      className="
+        fixed top-0 z-50 w-full
+        border-b border-white/10
+        bg-black/70 backdrop-blur-xl
+      "
       data-aos="fade-down"
       data-aos-delay="100"
     >
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
-        <div data-aos="fade-right" data-aos-delay="200">
-          <NavLink
-            to="/"
-            className="flex items-center gap-2 text-xl font-bold text-primary"
+        <button
+          onClick={() => handleSmoothScroll("home")}
+          className="
+            flex items-center gap-2
+            text-lg font-semibold tracking-tight
+            text-white transition-opacity
+            hover:opacity-80
+          "
+          data-aos="fade-right"
+          data-aos-delay="200"
+        >
+          <div
+            className="
+              flex h-9 w-9 items-center justify-center
+              rounded-xl border border-white/10
+              bg-zinc-900
+            "
           >
-            {/* Logo */}
-            <FaUser />
-            {/* <img src="/logo.png" alt="Clickcode Logo" className="h-8 w-8" /> */}
-            {/* Teks */}
-            Alpharii
-          </NavLink>
-        </div>
+            <FaUser className="text-sm text-white" />
+          </div>
 
-        {/* Nav Items for Desktop */}
+          <span>
+            Alphari
+          </span>
+        </button>
+
+        {/* Desktop Menu */}
         <div
-          className="hidden md:flex gap-6 items-center"
+          className="hidden items-center gap-1 md:flex"
           data-aos="fade-left"
           data-aos-delay="300"
         >
-          {navItems.map((item, index) => (
-            <NavLink
-              key={index}
-              to={item.href}
-              className={"text-gray-100 hover:text-primary transition-colors"}
+          {navItems.map((item) => (
+            <button
+              key={item.name}
+              onClick={() => handleSmoothScroll(item.href)}
+              className="
+                rounded-lg px-4 py-2
+                text-sm font-medium text-zinc-400
+                transition-all duration-200
+                hover:bg-white/5
+                hover:text-white
+              "
             >
               {item.name}
-            </NavLink>
+            </button>
           ))}
         </div>
 
-        {/* CTA Button for Desktop */}
+        {/* Desktop CTA */}
         <div
           className="hidden md:block"
           data-aos="fade-left"
           data-aos-delay="400"
         >
-          <Button asChild>
-            <NavLink to="/contact">Contact Me</NavLink>
+          <Button
+            onClick={() => handleSmoothScroll("contact")}
+            className="
+              gap-2 rounded-xl
+              bg-white text-black
+              hover:bg-zinc-200
+            "
+          >
+            Contact Me
+            <ArrowUpRight className="h-4 w-4" />
           </Button>
         </div>
 
         {/* Mobile Menu */}
-        <Dialog open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+        <Dialog
+          open={isMobileMenuOpen}
+          onOpenChange={setIsMobileMenuOpen}
+        >
           <DialogTrigger asChild className="md:hidden">
-            <Button variant="outline" size="icon">
+            <Button
+              size="icon"
+              variant="outline"
+              className="
+                border-white/10
+                bg-zinc-900 text-white
+                hover:bg-zinc-800
+              "
+            >
               <Menu className="h-5 w-5" />
             </Button>
           </DialogTrigger>
-          <DialogContent className="p-6">
-            <div className="flex flex-col gap-4 mt-8">
-              {navItems.map((item, index) => (
-                <NavLink
-                  key={index}
-                  to={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={({ isActive }) =>
-                    `text-lg text-gray-700 hover:text-primary transition-colors ${
-                      isActive ? 'text-primary font-bold' : ''
-                    }`
-                  }
+
+          <DialogContent
+            className="
+              border-white/10
+              bg-black text-white
+              sm:max-w-sm
+            "
+          >
+            <div className="mt-6 flex flex-col gap-2">
+              {navItems.map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => handleSmoothScroll(item.href)}
+                  className="
+                    rounded-xl px-4 py-3 text-left
+                    text-sm font-medium text-zinc-300
+                    transition-all duration-200
+                    hover:bg-white/5
+                    hover:text-white
+                  "
                 >
                   {item.name}
-                </NavLink>
+                </button>
               ))}
-              <Button asChild>
-                <NavLink
-                  to="/contact"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Hubungi Kami
-                </NavLink>
+
+              <Button
+                onClick={() => handleSmoothScroll("contact")}
+                className="
+                  mt-4 w-full rounded-xl
+                  bg-white text-black
+                  hover:bg-zinc-200
+                "
+              >
+                Contact Me
               </Button>
             </div>
           </DialogContent>

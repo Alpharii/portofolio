@@ -4,28 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { projects } from "./data/projects";
 
-const TECH_COLORS = {
-  Golang: "#00ADD8",
-  PostgreSQL: "#336791",
-  "Gemini API": "#4285F4",
-  TypeScript: "#3178C6",
-  "React Router": "#CA4245",
-  "Material UI": "#007FFF",
-  "Tailwind CSS": "#06B6D4",
-  Remix: "#000000",
-  "React Hook Form": "#EC5990",
-  "Shadcn UI": "#09090B",
-  Vite: "#646CFF",
-  React: "#61DAFB",
-  Javascript: "#F7DF1E",
-  "Next.js": "#FFFFFF",
-  NestJs: "#E0234E",
-  Prisma: "#2D3748",
-  Zustand: "#423400",
-  Midtrans: "#003B5C",
-  "React Quil": "#0693e3",
-};
-
 const CARD_GRADIENTS = [
   "from-violet-600/30 via-purple-900/20 to-slate-900",
   "from-blue-600/30 via-cyan-900/20 to-slate-900",
@@ -61,7 +39,7 @@ export default function Projects() {
 
   return (
     <section
-      id="projects"
+      id="portfolio"
       className="relative min-h-screen py-24 bg-[#080B14] text-white overflow-hidden"
     >
       {/* ── Background atmosphere ── */}

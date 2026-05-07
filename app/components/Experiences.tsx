@@ -64,7 +64,7 @@ const techIcon = (tech: string) => {
 const Experiences = () => {
   return (
     <section
-      id="experience"
+      id="experiences"
       className="min-h-screen bg-gradient-to-br from-zinc-950 via-zinc-900 to-black py-20 text-zinc-100 relative overflow-hidden"
     >
       {/* Glow */}

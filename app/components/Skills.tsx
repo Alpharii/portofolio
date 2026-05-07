@@ -1,157 +1,159 @@
-import { Badge } from '../components/ui/badge';
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
-
-import { FaReact, FaDocker, FaPhp } from 'react-icons/fa';
-import {
-  SiRemix,
-  SiVuedotjs,
-  SiNestjs,
-  SiPostgresql,
-  SiMongodb,
-  SiPrisma,
-  SiGo,
-  SiGin,
-  SiNginx,
-  SiMysql,
-  SiNextdotjs,
-  SiJavascript,
-  SiTypescript,
-  SiRedis,
-  SiLaravel,
-  SiReactrouter,
-} from 'react-icons/si';
-import { RiCloudLine } from 'react-icons/ri';
+import { useState } from 'react';
 import { Code } from 'lucide-react';
-
-export const skills = [
-  // Languages
-  { name: 'JavaScript', icon: SiJavascript, color: 'text-yellow-400' },
-  { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-500' },
-  { name: 'Go', icon: SiGo, color: 'text-cyan-400' },
-  { name: 'PHP', icon: FaPhp, color: 'text-indigo-400' },
-
-  // Frontend
-  { name: 'React', icon: FaReact, color: 'text-cyan-400' },
-  { name: 'Next.js', icon: SiNextdotjs, color: 'text-zinc-200' },
-  { name: 'Vue 3', icon: SiVuedotjs, color: 'text-emerald-400' },
-  { name: 'Remix', icon: SiRemix, color: 'text-indigo-300' },
-  { name: 'React Router', icon: SiReactrouter, color: 'text-red-400' },
-
-  // Backend
-  { name: 'NestJS', icon: SiNestjs, color: 'text-rose-500' },
-  { name: 'Gin', icon: SiGin, color: 'text-sky-300' },
-  { name: 'Laravel', icon: SiLaravel, color: 'text-red-400' },
-
-  // Datastore
-  { name: 'Redis', icon: SiRedis, color: 'text-red-500' },
-  { name: 'MySQL', icon: SiMysql, color: 'text-blue-400' },
-  { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-blue-600' },
-  { name: 'MongoDB', icon: SiMongodb, color: 'text-emerald-500' },
-  { name: 'Prisma', icon: SiPrisma, color: 'text-sky-200' },
-
-  // DevOps
-  { name: 'Docker', icon: FaDocker, color: 'text-sky-500' },
-  { name: 'Nginx', icon: SiNginx, color: 'text-green-400' },
-  { name: 'CI/CD', icon: RiCloudLine, color: 'text-violet-400' },
-];
+import { CAT_ICONS, Categories, hexToRgba, skills } from './data/skills';
 
 export const Skills = () => {
-  const chunkSize = 10;
-  const pages = [];
+  const [active, setActive] = useState('All');
+  const [animKey, setAnimKey] = useState(0);
 
-  for (let i = 0; i < skills.length; i += chunkSize) {
-    pages.push(skills.slice(i, i + chunkSize));
-  }
+  const filtered =
+    active === 'All' ? skills : skills.filter(s => s.category === active);
+
+  const handleCat = (cat: any) => {
+    setActive(cat);
+    setAnimKey(k => k + 1);
+  };
+
+  // Duplicate for seamless marquee loop
+  const marqueeItems = [...skills, ...skills];
 
   return (
     <section
       id="skills"
-      className="relative py-24 bg-gradient-to-br from-slate-950 via-slate-900 to-black text-zinc-100 sm:py-20"
+      className="relative py-24 bg-linear-to-br from-slate-950 via-slate-900 to-black text-zinc-100 sm:py-20 overflow-hidden"
     >
-      {/* Glow */}
-      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[520px] h-[520px] bg-blue-600/10 blur-3xl rounded-full" />
+      {/* Ambient glow */}
+      <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-160 h-160 bg-blue-700/10 rounded-full blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 right-0 w-100 h-100 bg-violet-700/8 rounded-full blur-3xl" />
 
-      {/* Header */}
-      <div className="relative z-10 mb-14 text-center" data-aos="fade-up">
-        <Badge className="bg-zinc-800 text-zinc-200 inline-flex items-center gap-2">
-          <Code className="w-4 h-4" />
-          Skills
-        </Badge>
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-8">
 
-        <h2 className="mt-4 text-3xl md:text-4xl font-extrabold">Tech Stack</h2>
+        {/* Header */}
+        <div className="mb-12 text-center" data-aos="fade-up">
+          <span className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-800/60 px-4 py-1 text-xs text-zinc-400">
+            <Code className="h-3.5 w-3.5" />
+            Skills
+          </span>
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight md:text-4xl">
+            Tech Stack
+          </h2>
+          <p className="mt-3 text-sm text-zinc-400 max-w-md mx-auto">
+            Technologies I actively use in real-world projects.
+          </p>
+        </div>
 
-        <p className="mt-3 text-zinc-400 max-w-xl mx-auto">
-          Technologies I actively use in real-world projects.
-        </p>
-      </div>
-
-      {/* Swiper */}
-      <div
-        className="relative z-10 mx-auto max-w-6xl px-10 py-10"
-        data-aos="fade-up"
-        data-aos-delay="150"
-      >
-        <Swiper
-          modules={[Pagination, Autoplay]}
-          pagination={{ clickable: true }}
-          autoplay={{
-            delay: 2000,
-            disableOnInteraction: false,
-          }}
-          spaceBetween={32}
-          loop
+        {/* Category Tabs */}
+        <div
+          className="mb-10 flex flex-wrap justify-center gap-2"
+          data-aos="fade-up"
+          data-aos-delay="100"
         >
-          {pages.map((page, index) => (
-            <SwiperSlide key={index}>
-              <div
-                className="
-                    grid
-                    grid-cols-2
-                    sm:grid-cols-3
-                    md:grid-cols-4
-                    lg:grid-cols-5
-                    gap-4 sm:gap-6
-                  "
+          {Categories.map(cat => {
+            const count =
+              cat === 'All'
+                ? skills.length
+                : skills.filter(s => s.category === cat).length;
+
+            const isActive = active === cat;
+
+            const Icon = CAT_ICONS[cat];
+
+            return (
+              <button
+                key={cat}
+                onClick={() => handleCat(cat)}
+                className={`
+                  inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-medium
+                  border transition-all duration-200
+                  ${
+                    isActive
+                      ? 'border-zinc-400 bg-zinc-100 text-zinc-900'
+                      : 'border-zinc-700 bg-zinc-800/60 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200'
+                  }
+                `}
               >
-                {page.map(skill => {
-                  const Icon = skill.icon;
-                  return (
-                    <div
-                      key={skill.name}
-                      data-aos="zoom-in"
-                      data-aos-delay="100"
-                      className="
-                        group flex flex-col items-center justify-center
-                        gap-2 sm:gap-3
-                        rounded-2xl sm:rounded-3xl
-                        border border-zinc-800
-                        bg-zinc-900/60 backdrop-blur
-                        px-4 py-6 sm:px-6 sm:py-8
-                        transition
-                        hover:border-zinc-600
-                        hover:bg-zinc-900
-                      "
-                    >
-                      <Icon
-                        className={`
-                          h-8 w-8 sm:h-10 sm:w-10
-                          ${skill.color}
-                          transition
-                          group-hover:scale-110
-                        `}
-                      />
-                      <span className="text-xs sm:text-sm text-zinc-300 text-center">
-                        {skill.name}
-                      </span>
-                    </div>
-                  );
-                })}
+                <Icon className="h-4 w-4" />
+
+                {cat}
+
+                <span
+                  className={`ml-0.5 text-[10px] ${
+                    isActive ? 'text-zinc-500' : 'text-zinc-600'
+                  }`}
+                >
+                  {count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Skill Cards Grid */}
+        <div
+          key={animKey}
+          className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+          data-aos="fade-up"
+          data-aos-delay="150"
+        >
+          {filtered.map((skill, i) => {
+            const Icon = skill.icon;
+
+            return (
+              <div
+                key={skill.name}
+                className="group flex flex-col items-center gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/60 px-4 py-6 backdrop-blur transition-all duration-200 hover:-translate-y-1 hover:border-zinc-600 hover:bg-zinc-900"
+                style={{ animationDelay: `${i * 30}ms` }}
+              >
+                {/* Icon */}
+                <div
+                  className="flex h-12 w-12 items-center justify-center rounded-xl"
+                  style={{ background: hexToRgba(skill.color, 0.12) }}
+                >
+                  <Icon
+                    className="text-2xl transition-transform duration-200 group-hover:scale-110"
+                    style={{ color: skill.color }}
+                  />
+                </div>
+
+                {/* Name */}
+                <div className="text-center">
+                  <p className="text-xs leading-tight font-medium text-zinc-200">
+                    {skill.name}
+                  </p>
+                  <p className="mt-0.5 text-[10px] text-zinc-600">
+                    {skill.category}
+                  </p>
+                </div>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+            );
+          })}
+        </div>
+
+        {/* Marquee */}
+        <div
+          className="mt-14 overflow-hidden border-t border-zinc-800 pt-6"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div className="hover:paused flex w-max animate-[marquee_32s_linear_infinite] gap-8">
+            {marqueeItems.map((skill, i) => {
+              const Icon = skill.icon;
+
+              return (
+                <span
+                  key={i}
+                  className="flex items-center gap-2 whitespace-nowrap text-xs text-zinc-500"
+                >
+                  <Icon
+                    className="text-base"
+                    style={{ color: skill.color }}
+                  />
+                  {skill.name}
+                </span>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );

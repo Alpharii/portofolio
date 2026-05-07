@@ -34,9 +34,10 @@ export const projects: Project[] = [
     title: "Nonton Mykisah",
     description: "Web for Anime Streaming powered by Otakudesu Scrapper Api",
     images: [
-      "/projects/nonton-mykisah/1.png",
-      "/projects/nonton-mykisah/2.png",
-      "/projects/nonton-mykisah/3.png",
+      "/projects/nonton-mykisah/1.webp",
+      "/projects/nonton-mykisah/2.webp",
+      "/projects/nonton-mykisah/3.webp",
+      "/projects/nonton-mykisah/4.webp",
     ],
     stack: [
       { icon: RiRemixRunFill, label: 'Remix' },
@@ -46,6 +47,20 @@ export const projects: Project[] = [
       { icon: SiTailwindcss, label: 'Tailwind CSS' },
     ],
     highlight: "Fullstack",
+    year: "2024",
+  },
+  {
+    title: "ClickCode.id",
+    description: "Landing page for ClickCode.id, a digital agency focusing on website development services.",
+    images: ["/projects/clickcode/1.webp", "/projects/clickcode/2.webp", "/projects/clickcode/3.webp", "/projects/clickcode/4.webp"],
+    stack: [
+      { icon: RiRemixRunFill, label: 'Remix' },
+      { icon: SiTypescript, label: 'TypeScript' },
+      { icon: SiShadcnui, label: 'Shadcn UI' },
+      { icon: SiVitest, label: 'Vite' },
+      { icon: SiTailwindcss, label: 'Tailwind CSS' },
+    ],
+    highlight: "Frontend",
     year: "2024",
   },
   {
@@ -83,7 +98,7 @@ export const projects: Project[] = [
   {
     title: "Remix Boilerplate",
     description: "Starter kit with HTTP-only cookie authentication, flat routes, and Axios as the HTTP client.",
-    images: ["/projects/remix-boilerplate/1.png"],
+    images: ["/projects/remix-boilerplate/1.webp", "/projects/remix-boilerplate/2.webp"],
     stack: [
       { icon: RiRemixRunFill, label: 'Remix' },
       { icon: SiTypescript, label: 'TypeScript' },
@@ -95,9 +110,9 @@ export const projects: Project[] = [
     year: "2024",
   },
   {
-    title: "Sticky Memo",
+    title: "Ownlyst",
     description: "Contributed to an open-source sticky note web application built with React and Material UI.",
-    images: ["/projects/sticky-memo/1.png"],
+    images: ["/projects/ownlyst/1.webp", "/projects/ownlyst/2.webp", "/projects/ownlyst/3.webp"],
     stack: [
       { icon: FaReact, label: 'React' },
       { icon: RiJavascriptLine, label: 'Javascript' },
@@ -123,23 +138,9 @@ export const projects: Project[] = [
     year: "2023",
   },
   {
-    title: "ClickCode.id",
-    description: "Landing page for ClickCode.id, a digital agency focusing on website development services.",
-    images: ["/projects/clickcode/1.png"],
-    stack: [
-      { icon: RiRemixRunFill, label: 'Remix' },
-      { icon: SiTypescript, label: 'TypeScript' },
-      { icon: SiShadcnui, label: 'Shadcn UI' },
-      { icon: SiVitest, label: 'Vite' },
-      { icon: SiTailwindcss, label: 'Tailwind CSS' },
-    ],
-    highlight: "Frontend",
-    year: "2024",
-  },
-  {
     title: "GadgetSpot",
     description: "Scalable e-commerce platform with payment gateway integration, built with a team of 4.",
-    images: ["/projects/gadgetspot/1.png"],
+    images: ["/projects/gadgetSpot/1.webp", "/projects/gadgetSpot/2.webp", "/projects/gadgetSpot/3.webp"],
     stack: [
       { icon: SiNestjs, label: 'NestJs' },
       { icon: SiPostgresql, label: 'PostgreSQL' },

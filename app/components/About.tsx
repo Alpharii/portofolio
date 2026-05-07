@@ -1,3 +1,4 @@
+import { handleSmoothScroll } from '~/lib/handleSmoothScroll';
 import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
 import { ArrowRight, Users, Star, Award } from 'lucide-react';
@@ -121,10 +122,9 @@ const About = () => {
             className="bg-blue-600 hover:bg-blue-700 text-white rounded-[5px]"
             data-aos="zoom-in"
             data-aos-delay="400"
+            onClick={() => handleSmoothScroll("contact")}
           >
-            <a href="#" className="flex items-center gap-2">
-              Get In Touch <ArrowRight className="h-4 w-4" />
-            </a>
+            <span>Get In Touch</span><ArrowRight className="h-4 w-4" />
           </Button>
         </div>
 
